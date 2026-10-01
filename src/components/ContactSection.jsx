@@ -5,6 +5,7 @@ import Container from "./Container"
 import GithubIcon from "./GithubIcon"
 
 const initial = { name: "", email: "", message: "" }
+const accessKey = (import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "").trim()
 
 function validate(values) {
   const errors = {}
@@ -19,13 +20,14 @@ export default function ContactSection({ level = "h2" }) {
   const [values, setValues] = useState(initial)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState("")
+  const [sending, setSending] = useState(false)
   const Title = level
 
   function update(field, value) {
     setValues((current) => ({ ...current, [field]: value }))
   }
 
-  function onSubmit(event) {
+  async function onSubmit(event) {
     event.preventDefault()
     const nextErrors = validate(values)
     setErrors(nextErrors)
@@ -33,10 +35,43 @@ export default function ContactSection({ level = "h2" }) {
       setStatus("")
       return
     }
-    const subject = encodeURIComponent(`Project inquiry from ${values.name.trim()}`)
-    const body = encodeURIComponent(`${values.message.trim()}\n\n— ${values.name.trim()}\n${values.email.trim()}`)
-    setStatus("Opening your email app with this note.")
-    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`
+
+    if (!accessKey) {
+      setStatus("The contact form is not configured yet. Use Email me instead.")
+      return
+    }
+
+    setSending(true)
+    setStatus("Sending…")
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: values.name.trim(),
+          email: values.email.trim(),
+          message: values.message.trim(),
+          subject: `Portfolio inquiry from ${values.name.trim()}`,
+          from_name: "Portfolio contact",
+          replyto: values.email.trim(),
+        }),
+      })
+      const result = await response.json()
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "The message could not be sent.")
+      }
+      setValues(initial)
+      setStatus("Sent. I’ll get back to you by email.")
+    } catch {
+      setStatus("Something went wrong. Please email me directly.")
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -61,7 +96,7 @@ export default function ContactSection({ level = "h2" }) {
 
           <form className="lg:col-span-5" onSubmit={onSubmit} noValidate>
             <p className="text-sm leading-relaxed text-muted">
-              Prefer to write it out? This draft opens in your email app. It is not stored on a server.
+              Prefer to write it out? Your note is sent to my inbox. I&apos;ll reply by email.
             </p>
             <div className="mt-6 grid gap-5">
               <Field
@@ -91,7 +126,9 @@ export default function ContactSection({ level = "h2" }) {
               />
             </div>
             <div className="mt-6">
-              <Button type="submit">Open in email</Button>
+              <Button type="submit" disabled={sending}>
+                {sending ? "Sending…" : "Send message"}
+              </Button>
             </div>
             <p className="mt-4 min-h-6 text-sm text-muted" role="status">
               {status}

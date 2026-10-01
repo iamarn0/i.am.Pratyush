@@ -19,10 +19,12 @@ export default function Button({
   external = false,
   onClick,
   cursor,
+  disabled = false,
 }) {
   const classes = cx(
     "inline-flex cursor-pointer items-center justify-center gap-2 text-sm font-medium transition-colors",
     variants[variant],
+    disabled ? "pointer-events-none opacity-50" : "",
     className,
   )
   const cursorProps = cursor ? { "data-cursor": cursor } : {}
@@ -56,7 +58,7 @@ export default function Button({
   }
 
   return (
-    <button type={type} className={classes} onClick={onClick}>
+    <button type={type} className={classes} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   )
