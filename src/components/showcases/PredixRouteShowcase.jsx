@@ -19,7 +19,7 @@ export default function PredixRouteShowcase({ project, index = 1 }) {
           </p>
           <h3
             id="predix-title"
-            className="mt-4 max-w-full text-[clamp(2.35rem,8.2vw,6rem)] leading-[0.88] font-medium tracking-[-0.045em]"
+            className="mt-4 max-w-full text-[clamp(2.15rem,5vw,4.25rem)] leading-[0.95] font-medium tracking-[-0.04em]"
           >
             {project.title}
           </h3>

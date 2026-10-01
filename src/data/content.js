@@ -15,7 +15,7 @@ export const evolution = [
   {
     title: "Production logistics",
     text: "A live platform for shipment operations, not a local demo.",
-    links: [{ label: "RocketryBox", to: "/work/rocketrybox" }],
+    links: [{ label: "Rocketry Box", to: "/work/rocketrybox" }],
   },
   {
     title: "Machine learning",
@@ -32,7 +32,7 @@ export const evolution = [
 export const builds = [
   {
     title: "Production systems",
-    project: "RocketryBox",
+    project: "Rocketry Box",
     to: "/work/rocketrybox",
     text: "Live operational software, where the product has to hold up outside a demo.",
     wide: true,
@@ -46,7 +46,7 @@ export const builds = [
   },
   {
     title: "Logistics platforms",
-    project: "RocketryBox",
+    project: "Rocketry Box",
     to: "/work/rocketrybox",
     text: "Shipment operations, partners, tracking, and fulfillment workflows.",
   },

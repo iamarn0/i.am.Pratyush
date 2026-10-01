@@ -20,7 +20,7 @@ export const projects = [
   {
     slug: "rocketrybox",
     tier: "main",
-    title: "ROCKETRYBOX",
+    title: "Rocketry Box",
     category: "Production Logistics Platform",
     theme: "logistics",
     statusLabel: "Production project",
@@ -53,7 +53,7 @@ export const projects = [
         id: "does",
         title: "What the product does",
         paragraphs: [
-          "RocketryBox is a live logistics aggregation platform. Shipment management, logistics services, tracking, fulfillment, and the workflows around an order sit in one production product.",
+          "Rocketry Box is a live logistics aggregation platform. Shipment management, logistics services, tracking, fulfillment, and the workflows around an order sit in one production product.",
         ],
       },
       {
@@ -77,7 +77,7 @@ export const projects = [
         id: "contribution",
         title: "What this case study includes",
         paragraphs: [
-          "RocketryBox is presented as a production platform. This page stays with the public product: what it is for, and the kinds of workflows it contains. It does not list private responsibilities, source code, internal architecture, credentials, customer information, or private metrics.",
+          "Rocketry Box is presented as a production platform. This page stays with the public product: what it is for, and the kinds of workflows it contains. It does not list private responsibilities, source code, internal architecture, credentials, customer information, or private metrics.",
         ],
       },
       {
@@ -117,9 +117,9 @@ export const projects = [
       },
     ],
     screenshots: [
-      shot("platform", "hero", "Public site", "RocketryBox public site", "rocketrybox/rocketrybox-platform"),
-      shot("seller", "gallery", "Seller home", "RocketryBox seller home", "rocketrybox/rocketrybox-seller"),
-      shot("tracking", "gallery", "Tracking", "RocketryBox shipment tracking", "rocketrybox/rocketrybox-tracking"),
+      shot("platform", "hero", "Public site", "Rocketry Box public site", "rocketrybox/rocketrybox-platform"),
+      shot("seller", "gallery", "Seller home", "Rocketry Box seller home", "rocketrybox/rocketrybox-seller"),
+      shot("tracking", "gallery", "Tracking", "Rocketry Box shipment tracking", "rocketrybox/rocketrybox-tracking"),
     ],
   },
   {

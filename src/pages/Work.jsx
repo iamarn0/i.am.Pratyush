@@ -13,7 +13,7 @@ export default function Work() {
       <Seo
         title="Work"
         path="/work"
-        description="Selected work by Pratyush Mondal. RocketryBox, Predix Route, and RoadVision lead. NEARE, LEKHA, and RIWAYAT are supporting products."
+        description="Selected work by Pratyush Mondal. Rocketry Box, Predix Route, and RoadVision lead. NEARE, LEKHA, and RIWAYAT are supporting products."
       />
       <div className="pt-28 pb-20 lg:pt-36 lg:pb-28">
         <Container>
