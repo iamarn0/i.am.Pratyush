@@ -11,7 +11,7 @@ function validate(values) {
   const errors = {}
   if (!values.name.trim()) errors.name = "Please add your name."
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) errors.email = "Please add a valid email."
-  if (values.message.trim().length < 12) errors.message = "Please write a short note about the project."
+  if (values.message.trim().length < 8) errors.message = "Please write a short note about the project (at least 8 characters)."
   return errors
 }
 
@@ -32,7 +32,7 @@ export default function ContactSection({ level = "h2" }) {
     const nextErrors = validate(values)
     setErrors(nextErrors)
     if (Object.keys(nextErrors).length) {
-      setStatus("")
+      setStatus("Please fix the fields above, then try again.")
       return
     }
 
@@ -160,7 +160,7 @@ function Field({ id, label, value, error, onChange, type = "text", multiline = f
       </label>
       {multiline ? <textarea {...shared} rows={5} /> : <input {...shared} type={type} />}
       {error ? (
-        <p id={errorId} className="mt-2 text-sm font-medium text-ink" role="alert">
+        <p id={errorId} className="mt-2 text-sm font-medium text-accent" role="alert">
           {error}
         </p>
       ) : null}
