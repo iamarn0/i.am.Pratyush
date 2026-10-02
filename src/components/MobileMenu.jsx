@@ -44,7 +44,7 @@ export default function MobileMenu({ onClose }) {
   }, [onClose])
 
   const linkClass = ({ isActive }) =>
-    `block py-2 text-4xl font-semibold tracking-[-0.04em] ${isActive ? "text-ink" : "text-ink/80"}`
+    `block py-2 text-4xl font-semibold tracking-[-0.04em] ${isActive ? "text-accent" : "text-ink/80"}`
 
   return (
     <motion.div

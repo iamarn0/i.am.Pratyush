@@ -10,7 +10,7 @@ export default function LekhaShowcase({ project }) {
   const invoice = shotById(project, "detail")
 
   return (
-    <section id="lekha" className="scroll-mt-24 bg-white" aria-labelledby="lekha-title">
+    <section id="lekha" className="scroll-mt-24 bg-surface" aria-labelledby="lekha-title">
       <Container className="py-14 lg:py-20">
         <Reveal>
           <p className="text-sm font-medium text-[#5c6178]">{project.category}</p>

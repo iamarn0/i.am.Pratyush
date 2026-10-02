@@ -1,5 +1,4 @@
 // Rewritten by the Vite config when public assets are added or removed.
-export const profileSrc = "/images/profile.webp"
 export const cvUrl = null
 export const projectShots = {
   "lekha/lekha-analytics": "/images/projects/lekha/lekha-analytics.png",

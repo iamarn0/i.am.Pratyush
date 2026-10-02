@@ -11,18 +11,12 @@ export default function BeyondSection() {
         <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
           The screen is the part people see. The product also lives in the systems underneath it.
         </p>
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:mt-16 lg:grid-cols-5">
+        <ul className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 xl:grid-cols-5">
           {clusters.map((cluster) => (
-            <li key={cluster.title} className="bg-surface p-5">
-              <h3 className="text-sm font-medium">{cluster.title}</h3>
-              <ul className="mt-4 space-y-1.5">
-                {cluster.items.map((item) => (
-                  <li key={item} className="text-sm leading-relaxed text-muted">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              {cluster.note ? <p className="mt-4 text-xs leading-relaxed text-muted">{cluster.note}</p> : null}
+            <li key={cluster.title}>
+              <h3 className="label-meta text-accent">{cluster.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed tracking-tight">{cluster.items.join(" · ")}</p>
+              {cluster.note ? <p className="mt-3 text-xs leading-relaxed text-muted">{cluster.note}</p> : null}
             </li>
           ))}
         </ul>

@@ -10,13 +10,13 @@ export default function RoadVisionShowcase({ project, index = 2 }) {
   const detection = shotById(project, "detection")
 
   return (
-    <section id="roadvision" className="scroll-mt-24 bg-[#f6f6f4]" aria-labelledby="roadvision-title">
+    <section id="roadvision" className="scroll-mt-24 bg-[#ecebe6]" aria-labelledby="roadvision-title">
       <Container className="py-16 lg:py-28">
         <Reveal>
           <p className="inline-flex border border-accent px-2.5 py-1 text-sm font-medium text-accent">
             <span className="font-mono">{String(index + 1).padStart(2, "0")}</span>
             <span className="mx-2">/</span>
-            {project.statusLabel}
+            Currently building
           </p>
           <h3
             id="roadvision-title"
@@ -24,13 +24,14 @@ export default function RoadVisionShowcase({ project, index = 2 }) {
           >
             {project.title}
           </h3>
-          <p className="mt-4 text-xl tracking-tight">Number-plate capture</p>
+          <p className="mt-4 text-xl tracking-tight">Computer Vision</p>
         </Reveal>
+
         <div className="mt-8 grid items-start gap-8 lg:mt-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
-            <p className="max-w-md text-base leading-relaxed text-muted">{project.description}</p>
+            <p className="max-w-md text-base leading-relaxed text-muted lg:text-lg">{project.description}</p>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-muted">
-              The public site is live. Accuracy and deployment scale are not claimed here.
+              Development visuals only. Accuracy, model performance, and production usage are not claimed.
             </p>
             <div className="mt-8">
               <ProjectActions project={project} includeCase notes={false} />
@@ -43,7 +44,7 @@ export default function RoadVisionShowcase({ project, index = 2 }) {
 
         <div className="mt-12 grid items-start gap-8 lg:mt-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <p className="text-sm font-medium">Current direction</p>
+            <p className="label-meta text-muted">Current direction</p>
             <div className="mt-5">
               <ArchitectureDiagram steps={project.system} />
             </div>

@@ -18,7 +18,7 @@ export default function SupportingWork() {
           Supporting Projects
         </h2>
         <p className="mt-4 max-w-xl leading-relaxed text-muted">
-          Products that strengthened my full-stack and product engineering foundation.
+          Projects that strengthened my product and full-stack engineering foundation.
         </p>
       </Container>
       {projectsByTier("supporting").map((project) => {

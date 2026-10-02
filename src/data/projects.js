@@ -174,12 +174,11 @@ export const projects = [
       { title: "Bulk prediction", text: "A batch can be queued instead of scored one shipment at a time." },
     ],
     stackGroups: [
-      { title: "Frontend", items: ["React", "Vite", "MUI", "TanStack Query"] },
-      { title: "Backend", items: ["Node.js", "Express", "TypeScript"] },
+      { title: "Frontend", items: ["React", "Vite"] },
+      { title: "Backend", items: ["Node", "Express"] },
       { title: "Data", items: ["MongoDB", "Redis"] },
-      { title: "Jobs", items: ["BullMQ"] },
+      { title: "Workers", items: ["BullMQ"] },
       { title: "ML", items: ["Python", "FastAPI", "XGBoost", "SHAP"] },
-      { title: "Infrastructure", items: ["Docker", "GitHub Actions"] },
     ],
     screensIntro: "The organization dashboard, a shipment risk evaluation, and the home page are from Predix Route.",
     study: [

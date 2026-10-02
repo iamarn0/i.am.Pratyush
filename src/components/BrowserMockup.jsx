@@ -3,8 +3,8 @@ import { cx } from "../lib/cx"
 const tones = {
   light: {
     frame: "border-line bg-surface",
-    bar: "border-line bg-[#f3f3f1]",
-    dot: "bg-[#d5d5d1]",
+    bar: "border-line bg-[#f3f2ed]",
+    dot: "bg-[#d5d3cb]",
     caption: "text-muted",
   },
   heritage: {

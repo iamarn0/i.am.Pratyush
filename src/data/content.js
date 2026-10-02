@@ -1,11 +1,11 @@
 export const evolution = [
   {
-    title: "Products",
-    text: "A complete visit: story, interface, and a path through the product.",
+    title: "Web applications",
+    text: "Interfaces with a clear visit: story, structure, and a path through the product.",
     links: [{ label: "RIWAYAT", to: "/work/riwayat" }],
   },
   {
-    title: "Full-stack systems",
+    title: "Full-stack products",
     text: "Multi-role products and business workflows, with real operational paths.",
     links: [
       { label: "NEARE", to: "/work/neare" },
@@ -13,7 +13,7 @@ export const evolution = [
     ],
   },
   {
-    title: "Production logistics",
+    title: "Production systems",
     text: "A live platform for shipment operations, not a local demo.",
     links: [{ label: "Rocketry Box", to: "/work/rocketrybox" }],
   },
@@ -31,50 +31,39 @@ export const evolution = [
 
 export const builds = [
   {
-    title: "Production systems",
+    title: "Production Systems",
     project: "Rocketry Box",
     to: "/work/rocketrybox",
-    text: "Live operational software, where the product has to hold up outside a demo.",
-    wide: true,
   },
   {
-    title: "Full-stack applications",
+    title: "Full-Stack Applications",
     project: "NEARE · LEKHA · RIWAYAT",
     to: "/work/neare",
-    text: "Interfaces, APIs, data, and the business logic that connects them.",
-    wide: true,
   },
   {
-    title: "Logistics platforms",
+    title: "Logistics Platforms",
     project: "Rocketry Box",
     to: "/work/rocketrybox",
-    text: "Shipment operations, partners, tracking, and fulfillment workflows.",
   },
   {
-    title: "SaaS products",
+    title: "SaaS Products",
     project: "LEKHA",
     to: "/work/lekha",
-    text: "Business software for invoices, clients, payments, and revenue.",
   },
   {
     title: "Marketplaces",
     project: "NEARE",
     to: "/work/neare",
-    text: "Nearby discovery, multiple roles, and an order that moves between them.",
   },
   {
-    title: "Machine learning systems",
+    title: "Machine Learning Systems",
     project: "Predix Route",
     to: "/work/predix-route",
-    text: "Logistics intelligence aimed at return-to-origin risk.",
-    wide: true,
   },
   {
-    title: "Computer vision applications",
+    title: "Computer Vision Applications",
     project: "RoadVision",
     to: "/work/roadvision",
-    text: "A number-plate capture system, currently in development.",
-    wide: true,
   },
 ]
 

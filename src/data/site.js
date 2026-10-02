@@ -9,10 +9,10 @@ export const site = {
   url: /^https?:\/\//.test(rawUrl) ? rawUrl : "",
   ogImage: "",
   description:
-    "Pratyush Mondal is a full-stack developer focused on production applications, logistics systems, marketplaces, SaaS products, applied machine learning, and computer vision.",
+    "Pratyush Mondal is a full-stack developer building production applications, logistics systems, SaaS products, and intelligent systems.",
   headline: "I build web products and intelligent systems that solve real-world problems.",
   support:
-    "Full-stack developer focused on production applications, logistics systems, marketplaces, SaaS products, applied machine learning, and computer vision.",
+    "Full-stack developer building production applications, logistics systems, SaaS products, and intelligent systems.",
 }
 
 export const nav = [

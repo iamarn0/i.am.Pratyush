@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 import { builds } from "../data/content"
-import { cx } from "../lib/cx"
 import Container from "./Container"
 import Reveal from "./Reveal"
 
@@ -12,12 +11,14 @@ export default function WhatIBuild() {
           <h2 id="build-title" className="text-[clamp(2rem,4vw,3.25rem)] leading-[1.05] font-medium tracking-tight">
             What I build
           </h2>
-          <ul className="mt-12 grid gap-px bg-line sm:grid-cols-2 lg:mt-16 lg:grid-cols-6">
+          <ul className="mt-10 max-w-2xl divide-y divide-line border-y border-line lg:mt-14">
             {builds.map((item) => (
-              <li key={item.title} className={cx("bg-bg p-6 sm:p-7", item.wide ? "lg:col-span-3" : "lg:col-span-2")}>
-                <h3 className="text-xl font-medium tracking-tight">{item.title}</h3>
-                <p className="mt-3 max-w-md text-sm leading-relaxed text-muted">{item.text}</p>
-                <Link to={item.to} className="mt-6 inline-flex text-sm font-medium underline decoration-ink/30 underline-offset-4 hover:decoration-ink">
+              <li key={item.title} className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
+                <h3 className="text-lg font-medium tracking-tight sm:text-xl">{item.title}</h3>
+                <Link
+                  to={item.to}
+                  className="text-sm font-medium text-muted underline decoration-ink/20 underline-offset-4 hover:text-ink hover:decoration-accent"
+                >
                   {item.project}
                 </Link>
               </li>

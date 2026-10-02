@@ -9,6 +9,7 @@ import ProjectGallery from "./ProjectGallery"
 import ProjectHeroVisual from "./ProjectHeroVisual"
 import ScreenshotFrame from "./ScreenshotFrame"
 import StateMachine from "./StateMachine"
+import StackGroups from "./StackGroups"
 import TechnicalCards from "./TechnicalCards"
 
 export default function CaseStudy({ project, next }) {
@@ -238,20 +239,7 @@ function BlockBody({ block, project, gallery }) {
   }
 
   if (block.kind === "stack") {
-    return (
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {project.stackGroups.map((group) => (
-          <div key={group.title}>
-            <h3 className="text-sm font-medium text-muted">{group.title}</h3>
-            <ul className="mt-3 space-y-1.5">
-              {group.items.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    )
+    return <StackGroups groups={project.stackGroups} />
   }
 
   return null

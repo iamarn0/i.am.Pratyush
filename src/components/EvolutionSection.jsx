@@ -9,10 +9,10 @@ export default function EvolutionSection() {
       <Container>
         <Reveal>
           <h2 id="evolution-title" className="max-w-[16ch] text-[clamp(2rem,4.4vw,3.6rem)] leading-[1.05] font-medium tracking-tight text-balance">
-            How the work evolved
+            Engineering evolution
           </h2>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
-            A conceptual progression, from products to intelligent systems. It is not a dated timeline.
+            The increasing scope of problems I build systems for — from web applications to computer vision.
           </p>
         </Reveal>
         <div className="mt-12 lg:mt-16">

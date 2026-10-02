@@ -18,7 +18,7 @@ export default function Navbar() {
   const itemClass = ({ isActive }) =>
     cx(
       "text-sm font-medium transition-colors",
-      isActive ? "text-ink" : "text-muted hover:text-ink",
+      isActive ? "text-accent" : "text-muted hover:text-ink",
     )
 
   return (

@@ -4,8 +4,6 @@ import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
 import tailwindcss from "@tailwindcss/vite"
 
-const profileWebp = path.resolve("public/images/profile.webp")
-const profileJpg = path.resolve("public/images/profile.jpg")
 const cvFile = path.resolve("public/cv.pdf")
 const shotsRoot = path.resolve("public/images/projects")
 const assetsModule = path.resolve("src/generated/assets.js")
@@ -33,16 +31,9 @@ function collectShots() {
   return found
 }
 
-function profileSrcLiteral() {
-  if (fs.existsSync(profileWebp)) return '"/images/profile.webp"'
-  if (fs.existsSync(profileJpg)) return '"/images/profile.jpg"'
-  return "null"
-}
-
 function syncPublicAssets() {
   const shots = collectShots()
   const contents = `// Rewritten by the Vite config when public assets are added or removed.
-export const profileSrc = ${profileSrcLiteral()}
 export const cvUrl = ${fs.existsSync(cvFile) ? '"/cv.pdf"' : "null"}
 export const projectShots = ${JSON.stringify(shots, null, 2)}
 `
@@ -61,12 +52,7 @@ function publicAssetsPlugin() {
       fs.mkdirSync(path.resolve("public/images"), { recursive: true })
       const watch = (file) => {
         const resolved = path.resolve(file)
-        if (
-          resolved === profileWebp ||
-          resolved === profileJpg ||
-          resolved === cvFile ||
-          resolved.startsWith(shotsRoot)
-        ) {
+        if (resolved === cvFile || resolved.startsWith(shotsRoot)) {
           syncPublicAssets()
         }
       }
